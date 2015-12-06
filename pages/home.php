@@ -2,7 +2,7 @@
     <h1>ClanSeeker</h1>
     <p class="lead">ClanSeeker Util to view clans and players without your account.
     </p>
-    <p>Current Status: <?php echo $cs->apiRequest(ClanSeekerAPI::STATUS, array())->{'status'}; ?></p>
+    <p>Current Version: <?php echo $cs->apiRequest("version")->{'nameCode'}; ?></p>
     <p>
         <a class="btn btn-lg btn-success" href="?page=clan" role="button">Let's get started!</a>
     </p>

@@ -43,8 +43,8 @@
             <ul class="nav nav-pills pull-right">
                 <li role="presentation" id="home"><a href="index.php">Home</a></li>
                 <li role="presentation" id="clan"><a href="?page=clan">Clan Search</a></li>
-				<li role="presentation" id="dedserver"><a href="/">DEDServer</a></li>
-                <li role="presentation" id="android_app"><a href="https://play.google.com/store/apps/details?id=com.SiD3W4y.darkelixir">Get the Android app!</a></li>
+		<li role="presentation" id="redmoon"><a href="https://redmoon.io/">RedMoon</a></li>
+                <li role="presentation" id="android_app"><a href="https://play.google.com/store/apps/details?id=com.SiD3W4y.darkelixir">Get the Android app! (Deprecated)</a></li>
             </ul>
         </nav>
         <h3 class="text-muted">ClanSeeker</h3>

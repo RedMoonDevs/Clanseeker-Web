@@ -2,7 +2,8 @@
 
 class ClanSeekerAPI
 {
-    const API_URL = "http://62.4.23.229:8338/api/";
+	// This API_URL is temporary.
+    const API_URL = "http://api.senshiro.co:8338/";
 
     /**
      * Different commands
@@ -13,13 +14,14 @@ class ClanSeekerAPI
     const STATUS = "status";
 
     /**
-     * Looks for a Player using its playerId
+     * Looks for a Player using its playerId.
+	 * It also gives the image.
      * @param $player_id
      * @return the json
      */
     public function searchPlayer($player_id)
     {
-        return $this->apiRequest(self::PLAYER_SEARCH, array($player_id, "b64"));
+        return $this->apiRequest(self::PLAYER_SEARCH . "?id=" . $player_id . "&image=true");
     }
 
     /**
@@ -29,7 +31,7 @@ class ClanSeekerAPI
      */
     public function clanDetails($clan_id)
     {
-        return $this->apiRequest(self::CLAN_DETAILS, array($clan_id));
+        return $this->apiRequest(self::CLAN_DETAILS . "?id=" . $clan_id);
     }
 
     /**
@@ -39,22 +41,19 @@ class ClanSeekerAPI
      */
     public function searchClan($clan_name)
     {
-        return $this->apiRequest(self::CLAN_SEARCH, array($clan_name));
+        return $this->apiRequest(self::CLAN_SEARCH . "?name=" . urlencode($clan_name));
     }
 
     /**
      * Request a special command
-     * @param $api_name
+     * @param $full_command
      * @param $arguments
      * @return the json returned
      */
-    public function apiRequest($api_name, $arguments)
+    public function apiRequest($full_command)
     {
-        foreach ($arguments as &$arg) {
-            $arg = urlencode ($arg);
-        }
 
-        $final_url = self::API_URL . $api_name . "/" . join("/", $arguments);
+        $final_url = self::API_URL . $full_command;
         return json_decode(file_get_contents($final_url));
     }
 }

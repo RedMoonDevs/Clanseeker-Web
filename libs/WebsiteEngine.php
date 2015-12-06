@@ -5,7 +5,6 @@ class WebsiteEngine
     private $page = "";
     private $content = "";
     private $original;
-    private $value;
 
     /**
      * Handles the
@@ -45,11 +44,6 @@ class WebsiteEngine
     public function getOriginal()
     {
         return $this->original;
-    }
-
-    public function value($key, $value)
-    {
-        $this->value->{'$key'} = $value;
     }
 }
 

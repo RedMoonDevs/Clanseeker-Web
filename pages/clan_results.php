@@ -1,7 +1,7 @@
 <hr>
 <p></p>
 <table class="table table-hover">
-    <h2>Results Count : <?php echo count($clan_results->{'clanList'});?></h2>
+    <h2>Results Count : <?php echo count($clan_results->{'clans'});?></h2>
     <thead>
     <tr>
         <th>#</th>
@@ -15,7 +15,7 @@
     <tbody>
     <?php
     $scope = 0;
-    foreach ($clan_results->{'clanList'} as $clan) {
+    foreach ($clan_results->{'clans'} as $clan) {
         $scope++;
         $score = $clan->{'score'};
         $playerCount = $clan->{'playerCount'};
