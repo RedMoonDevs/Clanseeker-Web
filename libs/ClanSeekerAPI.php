@@ -2,8 +2,7 @@
 
 class ClanSeekerAPI
 {
-	// This API_URL is temporary.
-    const API_URL = "http://api.senshiro.co:8338/";
+    const API_URL = "http://api.clanseeker.co/";
 
     /**
      * Different commands
